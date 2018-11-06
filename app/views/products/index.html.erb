@@ -1,0 +1,14 @@
+
+
+ 
+ <% @products.each do |product| %>
+ <h3><td><%= product.name %></td></h3>
+ <h4><td><%= product.price%></td></h3>
+ <h4>
+    <% product.categories.each do |category| %>
+     <td><%= category.name %></td>
+    <% end %>
+ </h4>
+ <%= link_to "Editar", edit_product_path(product) %>
+<%= link_to "Eliminar", product, method: :delete, data: {confirm: "Estas seguro?"} %>   
+<% end %>
